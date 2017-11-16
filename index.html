@@ -7,14 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue2 Step By Step</title>
     <style>
-        .is-loading {
-            background-color: lime;
-        }
+
     </style>
 </head>
 <body>
     <div id="app">
-        <button v-bind:disabled="isLoading" v-on:click="toggleClass">Add</button>
+        <h2>All Tasks</h2>
+        <ul>
+            <li v-for="task in tasks"><input type="checkbox" v-model="task.completed">{{ task.description }}</li>
+        </ul>
+
+        <h2>All completed Tasks</h2>
+        <ul>
+            <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        </ul>
+
+        <h2>All ucompleted Tasks</h2>
+        <ul>
+            <li v-for="task in completeTasks" v-text="task.description"></li>
+        </ul>
     </div>
 
     <script src="node_modules/vue/dist/vue.js"></script>
@@ -22,18 +33,23 @@
         new Vue({
             el: '#app',
             data: {
-                isLoading: false,
+                tasks: [
+                    { description: 'Milch kaufen', completed: true},
+                    { description: 'Brot backen', completed: true},
+                    { description: 'Zimmer putzen', completed: true},
+                    { description: 'Auto in der Werkstatt bringen', completed: true},
+                    { description: 'Elducation fertig machen', completed: false},
+                    { description: 'Vue.js verstehen', completed: false}
+                ]
             },
-            methods: {
-                toggleClass() {
-                    if(this.isLoading) {
-                        this.isLoading = false;
-                    } else {
-                        this.isLoading = true;
-                    }
+            computed: {
+                incompleteTasks() {
+                    return this.tasks.filter(task => ! task.completed);
+                },
+                completeTasks() {
+                    return this.tasks.filter(task => task.completed);
                 }
             }
-
         });
     </script>
 </body>
