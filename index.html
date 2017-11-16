@@ -6,14 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue2 Step By Step</title>
+    <style>
+        .is-loading {
+            background-color: lime;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="name in names" v-text="name"></li>
-        </ul>
-        <input type="text" id="input" v-model="newName">
-        <button v-on:click="addName">Add</button>
+        <button v-bind:disabled="isLoading" v-on:click="toggleClass">Add</button>
     </div>
 
     <script src="node_modules/vue/dist/vue.js"></script>
@@ -21,16 +22,18 @@
         new Vue({
             el: '#app',
             data: {
-                newName: '',
-                names: ['Ruslan', 'Cedric', 'Denis']
+                isLoading: false,
             },
             methods: {
-                addName() {
-                    this.names.push(this.newName);
-
-                    this.newName = '';
+                toggleClass() {
+                    if(this.isLoading) {
+                        this.isLoading = false;
+                    } else {
+                        this.isLoading = true;
+                    }
                 }
-            },
+            }
+
         });
     </script>
 </body>
