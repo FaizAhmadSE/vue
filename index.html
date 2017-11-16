@@ -6,51 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue2 Step By Step</title>
-    <style>
-
-    </style>
 </head>
 <body>
     <div id="app">
-        <h2>All Tasks</h2>
-        <ul>
-            <li v-for="task in tasks"><input type="checkbox" v-model="task.completed">{{ task.description }}</li>
-        </ul>
-
-        <h2>All completed Tasks</h2>
-        <ul>
-            <li v-for="task in incompleteTasks" v-text="task.description"></li>
-        </ul>
-
-        <h2>All ucompleted Tasks</h2>
-        <ul>
-            <li v-for="task in completeTasks" v-text="task.description"></li>
-        </ul>
+        <task>Denis kauf mal Milch</task>
+        <task>Cedric braucht neue Hanteln</task>
+        <task>Ruslan ist richtig faul</task>
     </div>
 
     <script src="node_modules/vue/dist/vue.js"></script>
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                tasks: [
-                    { description: 'Milch kaufen', completed: true},
-                    { description: 'Brot backen', completed: true},
-                    { description: 'Zimmer putzen', completed: true},
-                    { description: 'Auto in der Werkstatt bringen', completed: true},
-                    { description: 'Elducation fertig machen', completed: false},
-                    { description: 'Vue.js verstehen', completed: false}
-                ]
-            },
-            computed: {
-                incompleteTasks() {
-                    return this.tasks.filter(task => ! task.completed);
-                },
-                completeTasks() {
-                    return this.tasks.filter(task => task.completed);
-                }
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
