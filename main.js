@@ -1,24 +1,20 @@
-Vue.component('task-list', {
+Vue.component('message', {
+    props: ['title' , 'body'],
     template: `
-        <ul>
-            <task v-for="task in tasks" v-text="task.description"></task>
-        </ul>`,
+        <article class="message is-primary" v-show="isVisible">
+            <div class="message-header">
+                <p>{{ title }}</p>
+                <button class="delete" aria-label="delete" v-on:click="isVisible = false"></button>
+            </div>
+            <div class="message-body">
+                {{ body }}
+            </div>
+        </article>`,
     data() {
         return {
-            tasks: [
-                { description: 'Milch kaufen', completed: true},
-                { description: 'Brot backen', completed: true},
-                { description: 'Zimmer putzen', completed: true},
-                { description: 'Auto in der Werkstatt bringen', completed: true},
-                { description: 'Elducation fertig machen', completed: false},
-                { description: 'Vue.js verstehen', completed: false}
-            ]
+            isVisible: true
         }
     }
-});
-
-Vue.component('task', {
-   template:'<li><slot></slot></li>'
 });
 
 new Vue({
