@@ -11,10 +11,19 @@
 </head>
 <body>
     <div id="app" class="container">
-        <modal v-show="modalShow" @close="modalShow = false">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis dolore, dolorem nam nisi optio?
-        </modal>
-        <button class="button" @click="modalShow = true">Show Modal</button>
+        <tabs>
+            <tab name="About us" :selected="true">
+                <h1>Lorem ipsum dolor sit amet.</h1>
+            </tab>
+
+            <tab name="About our Culture">
+                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, placeat.</h1>
+            </tab>
+
+            <tab name="About our Vision">
+                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dignissimos eius eligendi magni maxime porro!</h1>
+            </tab>
+        </tabs>
     </div>
 
     <script src="node_modules/vue/dist/vue.js"></script>
