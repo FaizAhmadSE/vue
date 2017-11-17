@@ -11,9 +11,15 @@
 </head>
 <body>
     <div id="app" class="container">
-        <coupon></coupon>
+        <modal>
+            <template slot="header">Lorem ipsum dolor.</template>
 
-        <p v-show="couponActive">COUPON</p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio impedit, itaque praesentium quas quos voluptatem?
+
+            <template slot="footer">
+                <button class="button is-danger">Save changes</button>
+            </template>
+        </modal>
     </div>
 
     <script src="node_modules/vue/dist/vue.js"></script>
