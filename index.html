@@ -11,19 +11,9 @@
 </head>
 <body>
     <div id="app" class="container">
-        <tabs>
-            <tab name="About us" :selected="true">
-                <h1>Lorem ipsum dolor sit amet.</h1>
-            </tab>
+        <coupon @applied="onCouponApplied"></coupon>
 
-            <tab name="About our Culture">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, placeat.</h1>
-            </tab>
-
-            <tab name="About our Vision">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dignissimos eius eligendi magni maxime porro!</h1>
-            </tab>
-        </tabs>
+        <p v-show="couponActive">COUPON</p>
     </div>
 
     <script src="node_modules/vue/dist/vue.js"></script>
