@@ -11,9 +11,10 @@
 </head>
 <body>
     <div id="app" class="container">
-        <message title="Primary Header 3" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></message>
-
-        <message title="Primary Header 4" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></message>
+        <modal v-show="modalShow" @close="modalShow = false">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis dolore, dolorem nam nisi optio?
+        </modal>
+        <button class="button" @click="modalShow = true">Show Modal</button>
     </div>
 
     <script src="node_modules/vue/dist/vue.js"></script>
