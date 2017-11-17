@@ -11,15 +11,15 @@
 </head>
 <body>
     <div id="app" class="container">
-        <modal>
-            <template slot="header">Lorem ipsum dolor.</template>
 
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio impedit, itaque praesentium quas quos voluptatem?
+        <progression-view inline-template>
+            <div>
+                <h1>Lorem ipsum dolor sit amet {{ completionRate }}%</h1>
 
-            <template slot="footer">
-                <button class="button is-danger">Save changes</button>
-            </template>
-        </modal>
+                <button class="button" @click="completionRate += 10">Add more</button>
+            </div>
+        </progression-view>
+
     </div>
 
     <script src="node_modules/vue/dist/vue.js"></script>
