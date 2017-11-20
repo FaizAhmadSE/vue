@@ -4,6 +4,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/skills', function() {
-    return ['Laravel', 'Vue', 'PHP', 'JavaScript'];
-});
+Route::get('/projects/create', 'ProjectController@create');
+Route::post('/projects/store', 'ProjectController@store');
