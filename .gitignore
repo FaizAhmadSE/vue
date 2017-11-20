@@ -4,5 +4,6 @@
 /storage/*.key
 /vendor
 /.idea
+/.idea/workspace.xml
 npm-debug.log
 .env
