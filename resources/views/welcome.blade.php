@@ -4,25 +4,29 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Laravel</title>
 
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1>Vue und Laravel</h1>
+        <div id="app">
 
-        <div id="one">
-            @{{ shared.user.name }} <br>
-            @{{ foo }}
+            <router-link to="/">
+                <a>Home</a>
+            </router-link>
+            <router-link to="/about">
+                <a>About</a>
+            </router-link>
+
+            <section class="section">
+                <div class="container">
+                    <router-view></router-view>
+                </div>
+            </section>
+            
         </div>
-
-        <div id="two">
-            @{{ shared.user.name }} <br>
-            @{{ foo }}
-        </div>
-
-        <div id="app"></div>
 
         <script src="/js/app.js"></script>
     </body>
