@@ -6,14 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+
+        <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
         <h1>Vue und Laravel</h1>
-        <div id="app">
-            <ul>
-                <li v-for="skill in skills">@{{ skill }}</li>
-            </ul>
+
+        <div id="one">
+            @{{ shared.user.name }} <br>
+            @{{ foo }}
         </div>
+
+        <div id="two">
+            @{{ shared.user.name }} <br>
+            @{{ foo }}
+        </div>
+
+        <div id="app"></div>
 
         <script src="/js/app.js"></script>
     </body>

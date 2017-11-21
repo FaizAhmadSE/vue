@@ -35,3 +35,27 @@ const app = new Vue({
         }
     }
 });
+
+let store = {
+    user: {
+        name: 'Ruslan Steiger'
+    }
+};
+
+new Vue({
+    el: '#one',
+
+    data: {
+        shared: store,
+        foo: 'bar'
+    }
+});
+
+new Vue({
+    el: '#two',
+
+    data: {
+        shared: store,
+        foo: 'biz'
+    }
+});

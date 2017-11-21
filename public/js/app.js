@@ -1011,6 +1011,30 @@ var app = new Vue({
     }
 });
 
+var store = {
+    user: {
+        name: 'Ruslan Steiger'
+    }
+};
+
+new Vue({
+    el: '#one',
+
+    data: {
+        shared: store,
+        foo: 'bar'
+    }
+});
+
+new Vue({
+    el: '#two',
+
+    data: {
+        shared: store,
+        foo: 'biz'
+    }
+});
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
