@@ -15,8 +15,6 @@
             </ul>
         </div>
 
-        <script src="../../node_modules/vue/dist/vue.js"></script>
-        <script src="../../node_modules/axios/dist/axios.js"></script>
-        <script src="js/app.js"></script>
+        <script src="/js/app.js"></script>
     </body>
 </html>

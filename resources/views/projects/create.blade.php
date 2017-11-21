@@ -11,7 +11,7 @@
         </ul>
     @endif
 
-    <form method="POST" action="/public/projects/store" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
+    <form method="POST" action="/projects/store" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
         <div class="form-group">
             <label for="name">Project Name</label>
 
